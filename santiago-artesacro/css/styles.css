@@ -1,0 +1,186 @@
+/* ==========================================
+   SANTIAGO ARTESACRO - ESTILOS MODERNOS ADSO
+   ========================================== */
+:root {
+    --primary: #2E5A36;
+    --primary-dark: #1E3D24;
+    --accent: #D4AF37;
+    --bg-main: #F4F6F4;
+    --card-bg: #FFFFFF;
+    --text-main: #2C3E50;
+    --text-muted: #7F8C8D;
+    --border-color: #E2E8F0;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barra de Navegación Moderna */
+header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: #FFFFFF;
+    padding: 1.2rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #E2E8F0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* Contenedores y Tarjetas */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+    flex: 1;
+    width: 100%;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+h1, h2 {
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+p {
+    color: #4A5568;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Formularios y Inputs */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #2D3748;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 14px 16px 14px 45px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s;
+    background-color: #FAFAFA;
+}
+
+.input-with-icon input:focus {
+    border-color: var(--primary);
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(46, 90, 54, 0.1);
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+}
+
+/* Botones estéticos */
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: #FFFFFF;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s, transform 0.1s;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(46, 90, 54, 0.2);
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background-color: #4A5568;
+    box-shadow: 0 4px 12px rgba(74, 85, 104, 0.2);
+}
+
+.btn-secondary:hover {
+    background-color: #2D3748;
+}
+
+/* Pie de página */
+footer {
+    background-color: #1A202C;
+    color: #A0AEC0;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    margin-top: auto;
+}
