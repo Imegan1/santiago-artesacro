@@ -1,0 +1,27 @@
+<%--
+  Cabecera compartida (menú de navegación) que se incluye en todas las páginas.
+  Muestra opciones distintas según el usuario haya iniciado sesión o no.
+  Define las variables: ctx (ruta base), uriActual y usuarioSesion.
+--%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    String ctx = request.getContextPath();
+    String uriActual = request.getRequestURI();
+    modelo.Usuario usuarioSesion = (modelo.Usuario) session.getAttribute("usuario");
+%>
+<header class="barra">
+  <a class="marca" href="<%= ctx %>/">Santiago Artesacro</a>
+  <nav>
+    <a href="<%= ctx %>/">Inicio</a>
+    <a href="<%= ctx %>/catalogo" class="<%= uriActual.contains("catalogo") ? "activo" : "" %>">Catálogo</a>
+    <a href="<%= ctx %>/encargo" class="<%= uriActual.contains("encargo") ? "activo" : "" %>">Hacer un encargo</a>
+    <% if (usuarioSesion != null) { %>
+      <a href="<%= ctx %>/mis-pedidos" class="<%= uriActual.contains("mis-pedidos") ? "activo" : "" %>">Mis pedidos</a>
+      <span class="saludo">Hola, <%= util.Texto.esc(usuarioSesion.getNombres()) %></span>
+      <a href="<%= ctx %>/logout">Salir</a>
+    <% } else { %>
+      <a href="<%= ctx %>/login" class="<%= uriActual.contains("login") ? "activo" : "" %>">Ingresar</a>
+      <a href="<%= ctx %>/registro" class="<%= uriActual.contains("registro") ? "activo" : "" %>">Registrarse</a>
+    <% } %>
+  </nav>
+</header>

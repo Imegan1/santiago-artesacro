@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Santiago Artesacro - Hoja de estilos principal
+   Paleta: verde (identidad), dorado (acentos) y crema (fondo).
+   Secciones: 1 Base · 2 Barra de navegación · 3 Catálogo · 4 Formularios
+              5 Avisos · 6 Tabla de pedidos · 7 Portada · 8 Pie de página
+   ========================================================================== */
+
+/* ---------- 1. Base ---------- */
+:root {
+  --verde: #2f4a3a;
+  --dorado: #b08d3e;
+  --crema: #faf7f0;
+  --texto: #2b2b2b;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: var(--crema); color: var(--texto); }
+a { color: inherit; text-decoration: none; }
+h1 { color: var(--verde); margin: 0 0 4px; }
+
+.contenedor { max-width: 1100px; margin: 0 auto; padding: 28px 18px 48px; }
+.angosto { max-width: 520px; }
+.sub { margin: 0 0 18px; color: #666; }
+.vacio { padding: 30px 0; color: #777; }
+
+/* ---------- 2. Barra de navegación ---------- */
+.barra { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: var(--verde); color: #fff; padding: 14px 24px; }
+.marca { font-size: 1.4rem; letter-spacing: .5px; color: var(--dorado); }
+.barra nav a { margin-left: 18px; padding-bottom: 4px; }
+.barra nav a.activo, .barra nav a:hover { border-bottom: 2px solid var(--dorado); }
+.saludo { margin-left: 18px; color: var(--dorado); }
+
+/* ---------- 3. Catálogo ---------- */
+.filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.chip { border: 1px solid var(--verde); color: var(--verde); padding: 6px 14px; border-radius: 999px; font-size: .95rem; }
+.chip.activo, .chip:hover { background: var(--verde); color: #fff; }
+
+.rejilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 22px; }
+.tarjeta { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  display: flex; flex-direction: column; }
+.tarjeta img, .sin-foto { width: 100%; height: 210px; object-fit: cover; }
+.sin-foto { display: flex; align-items: center; justify-content: center; background: #e9e4d6; color: #8a8470; }
+.cuerpo { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+.cat { font-size: .78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--dorado); }
+.cuerpo h2 { margin: 4px 0 6px; font-size: 1.15rem; color: var(--verde); }
+.desc { margin: 0 0 8px; font-size: .95rem; color: #555; }
+.datos { margin: 0 0 12px; padding-left: 18px; font-size: .88rem; color: #666; }
+.pie { margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
+.precio { font-weight: bold; color: var(--verde); font-size: 1.1rem; }
+.agotado { background: #8b2e2e; color: #fff; font-size: .75rem; padding: 3px 9px; border-radius: 999px; }
+
+/* ---------- 4. Formularios y botones ---------- */
+.formulario { display: flex; flex-direction: column; gap: 14px; margin: 18px 0; }
+.formulario label { display: flex; flex-direction: column; gap: 5px; font-size: .95rem; color: var(--verde); }
+.formulario input, .formulario select, .formulario textarea {
+  padding: 10px 12px; border: 1px solid #c9c3b0; border-radius: 8px; font: inherit; background: #fff; }
+.formulario input:focus, .formulario textarea:focus { outline: 2px solid var(--dorado); border-color: var(--dorado); }
+.formulario textarea { min-height: 120px; resize: vertical; }
+
+.boton { background: var(--verde); color: #fff; border: 0; padding: 12px 18px; border-radius: 8px;
+  font: inherit; cursor: pointer; display: inline-block; text-align: center; text-decoration: none; }
+.boton:hover { background: #3d5e49; }
+.boton.chico { padding: 7px 14px; font-size: .9rem; }
+.boton.claro { background: transparent; border: 2px solid var(--dorado); color: var(--dorado); }
+.boton.claro:hover { background: var(--dorado); color: #fff; }
+.enlace { color: var(--dorado); text-decoration: underline; }
+
+/* ---------- 5. Avisos ---------- */
+.aviso { padding: 10px 14px; border-radius: 8px; margin: 12px 0; }
+.aviso.ok { background: #e3f1e6; color: #1f5a2c; }
+.aviso.error { background: #f8e1e1; color: #8b2e2e; }
+.aviso ul { margin: 0; padding-left: 18px; }
+
+/* ---------- 6. Tabla de pedidos ---------- */
+.tabla-scroll { overflow-x: auto; }
+.tabla { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px;
+  overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.tabla th, .tabla td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #eee;
+  font-size: .93rem; vertical-align: top; }
+.tabla th { background: var(--verde); color: #fff; font-weight: normal; }
+
+.estado { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: .8rem; background: #e9e4d6; }
+.estado.recibido { background: #e8eef7; color: #2d4a7a; }
+.estado.en_proceso { background: #fbf0d5; color: #7a5c13; }
+.estado.listo, .estado.entregado { background: #e3f1e6; color: #1f5a2c; }
+.estado.cancelado { background: #f8e1e1; color: #8b2e2e; }
+
+/* ---------- 7. Portada (página de inicio) ---------- */
+.portada { background: linear-gradient(135deg, var(--verde), #1f3327); color: #fff; padding: 72px 18px; text-align: center; }
+.portada-texto { max-width: 720px; margin: 0 auto; }
+.portada h1 { color: #fff; font-size: 2.4rem; margin-bottom: 12px; }
+.portada p { font-size: 1.1rem; color: #e6e1cf; margin: 0 0 24px; }
+.portada-botones { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.bloques { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 10px 0 40px; }
+.bloque { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.bloque h2 { margin: 0 0 8px; color: var(--verde); font-size: 1.2rem; }
+.bloque p { margin: 0 0 12px; color: #555; }
+
+.contacto { text-align: center; background: #fff; border-radius: 10px; padding: 28px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.contacto h2 { margin: 0 0 6px; color: var(--verde); }
+.contacto p { margin: 0 0 16px; color: #555; }
+
+/* ---------- 8. Pie de página ---------- */
+.pie-pagina { text-align: center; padding: 22px; background: var(--verde); color: #d9d4c0; font-size: .9rem; }
