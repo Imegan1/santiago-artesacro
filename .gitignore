@@ -1,0 +1,16 @@
+# Archivos generados al compilar / desplegar (no se versionan)
+build/
+bin/
+target/
+*.class
+*.war
+
+# Datos locales de Eclipse y del sistema
+.metadata/
+*.log
+.DS_Store
+Thumbs.db
+
+# Credenciales: nunca subir contraseñas ni archivos de entorno
+.env
+*.env
